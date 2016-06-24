@@ -8,10 +8,11 @@ using Xamarin.Forms;
 
 namespace MyFirstXamarinApp.Pages
 {
-    public partial class MainPage : CarouselPage
+    public partial class NavigatorPage : NavigationPage
     {
-        public MainPage()
+        public NavigatorPage(CarouselPage page)
         {
+            this.PushAsync(page);
             InitializeComponent();
         }
     }

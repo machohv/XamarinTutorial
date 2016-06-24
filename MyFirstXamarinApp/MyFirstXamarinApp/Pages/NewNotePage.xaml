@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstXamarinApp.Pages.NewNotePage"
+             BackgroundColor="{StaticResource BackgroundColor}"
+             Title="Nueva Nota"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+  <ScrollView>
+    <StackLayout Padding="8">
+      <Label TextColor="{StaticResource TitleColor}" Text="Título"></Label>
+      <Entry x:Name="Title" TextColor="{StaticResource FontColor}" BackgroundColor="White" ></Entry>
+
+      <Label TextColor="{StaticResource TitleColor}" Text="Descripción"></Label>
+      <Editor x:Name="Description" TextColor="{StaticResource FontColor}" BackgroundColor="White"
+              HeightRequest="100" ></Editor>
+
+      <Label TextColor="{StaticResource TitleColor}" Text="Fecha"></Label>
+      <DatePicker BackgroundColor="White" x:Name="Date">
+        <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+      </DatePicker>
+
+      <Label TextColor="{StaticResource TitleColor}" Text="Agregar una foto"></Label>
+      <Button BackgroundColor="{StaticResource TitleColor}"
+              Image="ic_action_maps_local_see.png"
+              Margin="20"
+              Clicked="TakePhoto"></Button>
+      
+      <Image x:Name="ImagePreview"></Image>
+      
+      <Button BackgroundColor="{StaticResource TitleColor}"
+              Text="Guardar"
+              TextColor="{StaticResource BackgroundColor}" 
+              FontAttributes="Bold"
+              Margin="20, 30"
+              Clicked="SaveNote"></Button>
+    </StackLayout>
+  </ScrollView>
+  
+</ContentPage>

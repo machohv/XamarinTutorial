@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFirstXamarinApp.Pages.OnlineListPage" 
+             BackgroundColor="{StaticResource BackgroundColor}"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+
+  <StackLayout>
+    <Label Text="Lista de notas en línea"
+           TextColor="{StaticResource TitleColor}"
+           FontAttributes="Bold"
+           FontSize="20"
+           VerticalOptions="Center"
+           Margin="8"
+           HorizontalOptions="Center" />
+  
+     <ListView x:Name="listaNotas" ItemTapped="OpenImage"
+                ItemTemplate="{StaticResource NoteItemTemplate}" 
+        HasUnevenRows="True">
+      </ListView>
+  </StackLayout>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Icon="ic_action_content_add.png"
+                 Command="{Binding GoToCommand}" 
+                 CommandParameter="NewOnlineNotePage">
+    </ToolbarItem>
+  </ContentPage.ToolbarItems>
+  
+</ContentPage>

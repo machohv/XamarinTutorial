@@ -8,11 +8,12 @@ using Xamarin.Forms;
 
 namespace MyFirstXamarinApp.Pages
 {
-    public partial class MainPage : CarouselPage
+    public partial class ImageViewPage : ContentPage
     {
-        public MainPage()
+        public ImageViewPage(string imagePath)
         {
             InitializeComponent();
+            BigImage.Source = imagePath;
         }
     }
 }
